@@ -1,6 +1,6 @@
 package ui;
 
-import database.DataBaseHelper;
+import database.DatabaseHelper;
 import tools.DialogHelper;
 
 import javax.swing.*;
@@ -69,11 +69,11 @@ public class RegisterJFrame extends JFrame implements MouseListener {
         if(e.getSource()==submit){
             //only if the passwords are the same
             if(userPw.getText().equals(userPwConf.getText())){
-                if(DataBaseHelper.checkUserIdExists(userId.getText())){
+                if(DatabaseHelper.checkUserIdExists(userId.getText())){
                     //if the current username is taken
                     DialogHelper.showDialog("The username is unavailable!");
                 }else{
-                    DataBaseHelper.registerUser(userId.getText(),userPw.getText());//add this account to database
+                    DatabaseHelper.registerUser(userId.getText(),userPw.getText());//add this account to database
                     this.setVisible(false);
                     new LoginJFrame();
                 }

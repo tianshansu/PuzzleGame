@@ -1,10 +1,10 @@
 package database;
 import java.sql.*;
 
-public class DataBaseHelper {
-    private static final String URL = "jdbc:mysql://tianshansu.com:3306/u867104763_PuzzleGameData";
-    private static final String USER = "u867104763_Gtz";
-    private static final String PASSWORD = "Gtz120734";
+public class DatabaseHelper {
+    private static final String URL = DatabaseConfig.getUrl();
+    private static final String USER = DatabaseConfig.getUser();
+    private static final String PASSWORD = DatabaseConfig.getPassword();
 
     //create database connection
     public static Connection getConnection() throws SQLException {

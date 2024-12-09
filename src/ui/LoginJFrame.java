@@ -1,10 +1,9 @@
 package ui;
 
-import database.DataBaseHelper;
+import database.DatabaseHelper;
 import tools.DialogHelper;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -63,7 +62,7 @@ public class LoginJFrame extends JFrame implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getSource() == login) {
-            if(DataBaseHelper.validateUser(userId.getText(),userPw.getText())){
+            if(DatabaseHelper.validateUser(userId.getText(),userPw.getText())){
                 //if the user enters the correct userId and userPw, set current login JFrame to invisible and make a new GameJFrame Object
                 this.setVisible(false);
                 new GameJFrame();
